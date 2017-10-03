@@ -12,7 +12,7 @@
  * @author WPspring
  */
 
-if ( !class_exists('Remove_Yoast_License_Warning') ) :
+if ( !class_exists('WPspring_Remove_Yoast_License_Warning') ) :
 
 class WPspring_Remove_Yoast_License_Warning {
 
@@ -50,9 +50,8 @@ class WPspring_Remove_Yoast_License_Warning {
 
 }
 
-$GLOBALS['wpspring_removeyoastlicensewarning'] = new WPspring_Remove_Yoast_License_Warning();
+$GLOBALS['wpspring_remove_yoast_license_warning'] = new WPspring_Remove_Yoast_License_Warning();
 
 require_once( 'class-yoast-license-manager.php' );
 
 endif;
-?>
