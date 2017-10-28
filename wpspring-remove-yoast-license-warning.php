@@ -22,6 +22,7 @@ class WPspring_Remove_Yoast_License_Warning {
 
 	}
 
+ // http://stv.whtly.com/2011/09/03/forcing-a-wordpress-plugin-to-be-loaded-before-all-other-plugins/
 	public function wpspring_remove_yoast_license_warning_activated_plugin_action() {
 
 		if ( is_admin() ) {
