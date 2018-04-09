@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name: WPspring Remove Yoast License Warning
+ * Plugin Name: Remove Yoast License Warning
  * Plugin URI: https://wordpress.org/plugins/wpspring-remove-yoast-license-warning/
  * Description: This plugin removes the Yoast License Warning from the WP Admin header and Plugins page.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: WPspring
- * Author URI: https://wpspring.com
+ * Author URI: https://wpspring.com/
  * Requires at least: 3.0
- * Tested up to: 4.9
+ * Tested up to: 4.9.5
  *
  * @author WPspring
  */
