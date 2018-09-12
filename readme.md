@@ -26,5 +26,11 @@ That's it! The Yoast License Warning will no longer display in the WP Admin head
 
 ## Changelog
 
-###  1.0.0
+### 1.0.2
+* Update for WP 4.9.5
+
+### 1.0.1
+* Update for WP 4.9.4
+
+### 1.0.0
 * First version.
