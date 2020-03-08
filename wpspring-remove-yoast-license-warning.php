@@ -3,7 +3,7 @@
  * Plugin Name: Remove Yoast License Warning
  * Plugin URI: https://wordpress.org/plugins/wpspring-remove-yoast-license-warning/
  * Description: This plugin removes the Yoast License Warning from the WP Admin header and Plugins page.
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: WPspring
  * Author URI: https://wpspring.com/
  * Requires at least: 3.0
@@ -19,6 +19,26 @@ class WPspring_Remove_Yoast_License_Warning {
 	public function __construct() {
 
 		add_action( 'activated_plugin', array( $this, 'wpspring_remove_yoast_license_warning_activated_plugin_action' ) );
+    /** 
+    * Disable Yoast's Hidden love letter about using the WordPress SEO plugin.
+    * https://buddydev.com/remove-this-site-is-optimized-with-the-yoast-seo-plugin-vx-y-z/
+    */
+    add_action( 'template_redirect', function () {
+
+      if ( ! class_exists( 'WPSEO_Frontend' ) ) {
+        return;
+      }
+
+      $instance = WPSEO_Frontend::get_instance();
+
+      // make sure, future version of the plugin does not break our site.
+      if ( ! method_exists( $instance, 'debug_mark') ) {
+        return ;
+      }
+
+      // ok, let us remove the love letter.
+      remove_action( 'wpseo_head', array( $instance, 'debug_mark' ), 2 );
+    }, 9999 );
 
 	}
 
@@ -46,27 +66,6 @@ class WPspring_Remove_Yoast_License_Warning {
 		}
 
 		require_once( 'class-yoast-license-manager.php' );
-
-		/** 
- 		* Disable Yoast's Hidden love letter about using the WordPress SEO plugin.
- 		* https://buddydev.com/remove-this-site-is-optimized-with-the-yoast-seo-plugin-vx-y-z/
- 		*/
-		add_action( 'template_redirect', function () {
- 
-    	if ( ! class_exists( 'WPSEO_Frontend' ) ) {
-        return;
-    	}
- 
-    	$instance = WPSEO_Frontend::get_instance();
-
-    	// make sure, future version of the plugin does not break our site.
-    	if ( ! method_exists( $instance, 'debug_mark') ) {
-        return ;
-    	}
-  
-    	// ok, let us remove the love letter.
-     	remove_action( 'wpseo_head', array( $instance, 'debug_mark' ), 2 );
-		}, 9999 );
 
 	}
 
