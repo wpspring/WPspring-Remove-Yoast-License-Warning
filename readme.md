@@ -2,9 +2,9 @@
 Contributors: wpspring
 Tags: remove yoast license warning
 Requires at least: 3.0
-Tested up to: 4.9.8
+Tested up to: 5.3.2
 Donate link: https://wpspring.com/
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv3
 
 Removes the Yoast License Warning from the WP Admin header and Plugins page.
